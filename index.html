@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism UI - Beautiful Glass Components</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="animated-background"></div>
+    
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Glassmorphism UI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#components" class="nav-link">Components</a>
+                    <a href="#installation" class="nav-link">Install</a>
+                    <a href="#examples" class="nav-link">Examples</a>
+                    <button class="btn-glass-sm" id="themeToggle">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="glass-card-hero">
+                    <div class="hero-badge">
+                        <span class="badge-text">✨ New Design System</span>
+                    </div>
+                    <h1 class="hero-title">Glassmorphism UI</h1>
+                    <p class="hero-subtitle">A collection of glassmorphic-styled components based on shadcn/ui. Beautiful, modern, and ready to use.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-glass-primary" onclick="scrollToSection('installation')">
+                            Get Started
+                        </button>
+                        <button class="btn-glass-outline" onclick="scrollToSection('components')">
+                            View Components
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Tailwind CSS Extension</h3>
+                    <p>Custom utilities and components for glassmorphic effects with backdrop blur and transparency.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>shadcn/ui Compatible</h3>
+                    <p>Built on top of shadcn components with consistent APIs and excellent developer experience.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Copy & Paste</h3>
+                    <p>Easy installation via CLI commands or manual copy. Get started in minutes with your existing setup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Component Showcase -->
+    <section id="components" class="components-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Component Showcase</h2>
+                <p class="section-description">Explore our glassmorphic components with live previews and code examples.</p>
+            </div>
+
+            <div class="components-grid">
+                <!-- Buttons Component -->
+                <div class="component-demo glass-card">
+                    <div class="demo-header">
+                        <h3 class="demo-title">Buttons</h3>
+                        <button class="code-toggle" data-target="buttons-code">
+                            <span class="code-icon">&lt;/&gt;</span>
+                        </button>
+                    </div>
+                    <div class="demo-content">
+                        <div class="demo-preview">
+                            <div class="button-group">
+                                <button class="btn-glass-primary">Primary</button>
+                                <button class="btn-glass-outline">Outline</button>
+                                <button class="btn-glass-ghost">Ghost</button>
+                            </div>
+                        </div>
+                        <div class="demo-code hidden" id="buttons-code">
+                            <pre><code>export function Button({ variant = 'glass', children, ...props }) {
+  const variants = {
+    glass: 'glass-card glass-hover text-white border-glass',
+    outline: 'glass-outline glass-hover text-white border-glass-strong',
+    ghost: 'glass-ghost glass-hover text-white'
+  };
+  return (
+    &lt;button className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${variants[variant]}`} {...props}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}</code></pre>
+                            <button class="copy-code" data-code="buttons">Copy Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards Component -->
+                <div class="component-demo glass-card">
+                    <div class="demo-header">
+                        <h3 class="demo-title">Cards</h3>
+                        <button class="code-toggle" data-target="cards-code">
+                            <span class="code-icon">&lt;/&gt;</span>
+                        </button>
+                    </div>
+                    <div class="demo-content">
+                        <div class="demo-preview">
+                            <div class="card-examples">
+                                <div class="glass-card-demo">
+                                    <h4>Glass Card</h4>
+                                    <p>Beautiful transparency with backdrop blur effects.</p>
+                                    <span class="status-glass">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-code hidden" id="cards-code">
+                            <pre><code>export function Card({ variant = 'default', children, className = '' }) {
+  const variants = {
+    default: 'glass-card border-glass',
+    elevated: 'glass-card-elevated border-glass shadow-glass-lg',
+    subtle: 'glass-subtle border-glass-subtle'
+  };
+  return (
+    &lt;div className={`p-6 rounded-2xl backdrop-blur-xl ${variants[variant]} ${className}`}&gt;
+      {children}
+    &lt;/div&gt;
+  );
+}</code></pre>
+                            <button class="copy-code" data-code="cards">Copy Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Elements -->
+                <div class="component-demo glass-card">
+                    <div class="demo-header">
+                        <h3 class="demo-title">Form Elements</h3>
+                        <button class="code-toggle" data-target="forms-code">
+                            <span class="code-icon">&lt;/&gt;</span>
+                        </button>
+                    </div>
+                    <div class="demo-content">
+                        <div class="demo-preview">
+                            <div class="form-examples">
+                                <input type="text" class="glass-input" placeholder="Glass input field">
+                                <select class="glass-select">
+                                    <option>Select option</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="demo-code hidden" id="forms-code">
+                            <pre><code>export function Input({ variant = 'glass', ...props }) {
+  return (
+    &lt;input 
+      className="glass-input w-full px-4 py-3 rounded-xl backdrop-blur-md border-glass text-white placeholder-glass-text focus:border-glass-focus focus:ring-2 focus:ring-glass-ring transition-all duration-300"
+      {...props}
+    /&gt;
+  );
+}</code></pre>
+                            <button class="copy-code" data-code="forms">Copy Code</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <div class="installation-content">
+                <div class="installation-header">
+                    <h2 class="section-title">Installation</h2>
+                    <p class="section-description">Get started with glassmorphic components in your project.</p>
+                </div>
+
+                <div class="installation-steps">
+                    <div class="step-card glass-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install shadcn/ui</h3>
+                            <p>First, set up shadcn/ui in your project if you haven't already.</p>
+                            <div class="code-block">
+                                <code>npx shadcn-ui@latest init</code>
+                                <button class="copy-btn" data-copy="npx shadcn-ui@latest init">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card glass-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Add Glassmorphic Theme</h3>
+                            <p>Add the glassmorphic plugin to your tailwind.config.js</p>
+                            <div class="code-block">
+                                <button class="copy-btn" data-copy="tailwind-plugin">Copy Plugin</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card glass-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Install Components</h3>
+                            <p>Use our CLI to add glassmorphic components to your project.</p>
+                            <div class="cli-commands">
+                                <div class="code-block">
+                                    <code>pnpm dlx shadcn@latest add https://glassmorph-ui.dev/r/button.json</code>
+                                    <button class="copy-btn" data-copy="pnpm dlx shadcn@latest add https://glassmorph-ui.dev/r/button.json">Copy</button>
+                                </div>
+                                <div class="code-block">
+                                    <code>pnpm dlx shadcn@latest add https://glassmorph-ui.dev/r/card.json</code>
+                                    <button class="copy-btn" data-copy="pnpm dlx shadcn@latest add https://glassmorph-ui.dev/r/card.json">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section id="examples" class="code-examples">
+        <div class="container">
+            <div class="examples-header">
+                <h2 class="section-title">Tailwind Plugin</h2>
+                <p class="section-description">The complete Tailwind CSS plugin implementation for glassmorphic effects.</p>
+            </div>
+
+            <div class="plugin-showcase glass-card">
+                <div class="plugin-tabs">
+                    <button class="tab-btn active" data-tab="plugin">Plugin</button>
+                    <button class="tab-btn" data-tab="variables">CSS Variables</button>
+                    <button class="tab-btn" data-tab="usage">Usage</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-panel active" id="plugin">
+                        <pre class="code-highlight"><code>const plugin = require('tailwindcss/plugin');
+
+module.exports = {
+  plugins: [
+    plugin(function({ addUtilities, addComponents, theme }) {
+      addComponents({
+        '.glass-card': {
+          'background': 'rgba(255, 255, 255, 0.1)',
+          'backdrop-filter': 'blur(16px)',
+          '-webkit-backdrop-filter': 'blur(16px)',
+          'border': '1px solid rgba(255, 255, 255, 0.2)',
+          'box-shadow': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+        },
+        '.glass-hover': {
+          '&:hover': {
+            'background': 'rgba(255, 255, 255, 0.15)',
+            'transform': 'translateY(-2px)',
+            'box-shadow': '0 12px 40px 0 rgba(0, 0, 0, 0.4)'
+          }
+        }
+      });
+    })
+  ]
+};</code></pre>
+                        <button class="copy-code-large" data-code="plugin">Copy Plugin Code</button>
+                    </div>
+
+                    <div class="tab-panel" id="variables">
+                        <pre class="code-highlight"><code>:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg-hover: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(16px);
+}</code></pre>
+                        <button class="copy-code-large" data-code="variables">Copy Variables</button>
+                    </div>
+
+                    <div class="tab-panel" id="usage">
+                        <pre class="code-highlight"><code>// Basic usage
+&lt;div className="glass-card p-6 rounded-xl"&gt;
+  &lt;h3&gt;Glass Card&lt;/h3&gt;
+  &lt;p&gt;Beautiful glassmorphic styling&lt;/p&gt;
+&lt;/div&gt;
+
+// Interactive elements
+&lt;button className="glass-card glass-hover px-6 py-3 rounded-xl"&gt;
+  Glass Button
+&lt;/button&gt;
+
+// Form elements
+&lt;input className="glass-input w-full px-4 py-3 rounded-xl" /&gt;</code></pre>
+                        <button class="copy-code-large" data-code="usage">Copy Examples</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content glass-card">
+                <div class="footer-text">
+                    <p>Built with ❤️ for the design community. Inspired by glassmorphism and powered by shadcn/ui.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://ui.shadcn.com" target="_blank" class="footer-link">shadcn/ui</a>
+                    <a href="https://tailwindcss.com" target="_blank" class="footer-link">Tailwind CSS</a>
+                    <a href="https://github.com" target="_blank" class="footer-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy Success Toast -->
+    <div class="toast glass-card" id="copyToast">
+        <span class="toast-icon">✅</span>
+        <span class="toast-text">Code copied to clipboard!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
