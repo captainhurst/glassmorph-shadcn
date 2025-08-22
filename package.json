@@ -1,15 +1,10 @@
 {
   "name": "glassmorph-shadcn",
   "version": "0.1.0",
-  "private": false,
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run build:lib && next build",
-    "build:lib": "tsc -p tsconfig.build.json",
+    "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
